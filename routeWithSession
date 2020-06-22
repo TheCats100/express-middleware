@@ -1,0 +1,19 @@
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
+
+router.get('/session-in', (req, res, next) => {
+  req.session.song = "be bop a lula"; 
+  res.send("connected")
+});
+
+router.get('/session-out', (req, res, next) => {
+  res.send(req.session.song)
+});
+
+
+module.exports = router;
