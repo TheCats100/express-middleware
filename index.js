@@ -20,5 +20,4 @@ app.get('/superMiddleware', (req, res, next) => {
     next()
 }, (req, res, next) => {
     res.send('hello world');
-    next()
 });
